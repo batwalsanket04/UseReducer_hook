@@ -5,21 +5,23 @@
   //const [state,Setstate]=useState(state)
 
   //2.defines reducer
-  
+
   const reducer=(state,action)=>{
+  
+  switch(action.type)=>{
 
-   switch(action.type)
-   {
+    case:'INC':return {count:state.count+1}
 
-     case:'INC':return {count:state.count+1}
+    case:'DEC':return {count:state.count-1};
 
-     case:'DEC':return{count:state.count-1}
+    case:'RESET':return {count:state.count=0};
 
-     case:'RESET':return {count:state.count=0}
-
-    default:return state;
-   }
+   default:return count;
   }
+   
+  }
+ 
+
    
 //  1.step
 const[state,dispatch]=useReducer(reducer,{count:0})
